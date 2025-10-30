@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
@@ -42,10 +43,14 @@ interface Habit {
 }
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const [courses] = useState<Course[]>([
-    { id: 1, title: 'Основы продаж', progress: 75, lessons: 12, completedLessons: 9, icon: 'Target' },
-    { id: 2, title: 'Холодные звонки', progress: 45, lessons: 8, completedLessons: 4, icon: 'Phone' },
-    { id: 3, title: 'Работа с возражениями', progress: 30, lessons: 10, completedLessons: 3, icon: 'MessageSquare' },
+    { id: 1, title: 'Личный бренд и продвижение', progress: 80, lessons: 4, completedLessons: 3, icon: 'Sparkles' },
+    { id: 2, title: 'Психология продаж', progress: 60, lessons: 4, completedLessons: 2, icon: 'Brain' },
+    { id: 3, title: 'Алгоритмы продаж', progress: 50, lessons: 4, completedLessons: 2, icon: 'Workflow' },
+    { id: 4, title: 'Презентация на языке выгод', progress: 25, lessons: 4, completedLessons: 1, icon: 'Presentation' },
+    { id: 5, title: 'Работа с возражениями', progress: 0, lessons: 3, completedLessons: 0, icon: 'ShieldCheck' },
   ]);
 
   const [achievements] = useState<Achievement[]>([
@@ -156,7 +161,10 @@ const Index = () => {
                         </div>
                         <Progress value={course.progress} className="h-2" />
                       </div>
-                      <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                      <Button 
+                        className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                        onClick={() => navigate(`/course/${course.id}`)}
+                      >
                         Продолжить обучение
                         <Icon name="ArrowRight" className="ml-2" size={18} />
                       </Button>
