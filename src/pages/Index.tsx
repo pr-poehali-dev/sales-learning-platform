@@ -49,7 +49,7 @@ const Index = () => {
     { id: 1, title: 'Личный бренд и продвижение', progress: 80, lessons: 4, completedLessons: 3, icon: 'Sparkles' },
     { id: 2, title: 'Психология продаж', progress: 60, lessons: 4, completedLessons: 2, icon: 'Brain' },
     { id: 3, title: 'Алгоритмы продаж', progress: 50, lessons: 4, completedLessons: 2, icon: 'Workflow' },
-    { id: 4, title: 'Презентация на языке выгод', progress: 25, lessons: 4, completedLessons: 1, icon: 'Presentation' },
+    { id: 4, title: 'Презентация на языке выгод', progress: 25, lessons: 4, completedLessons: 1, icon: 'TrendingUp' },
     { id: 5, title: 'Работа с возражениями', progress: 0, lessons: 3, completedLessons: 0, icon: 'ShieldCheck' },
   ]);
 
@@ -69,9 +69,9 @@ const Index = () => {
   ]);
 
   const [habits] = useState<Habit[]>([
-    { id: 1, title: 'Утренний звонок клиенту', streak: 12, completedToday: true, goal: 30 },
-    { id: 2, title: 'Изучение материалов', streak: 8, completedToday: true, goal: 21 },
-    { id: 3, title: 'Практика презентации', streak: 5, completedToday: false, goal: 14 },
+    { id: 1, title: 'Чтение 10 минут в день', streak: 12, completedToday: true, goal: 30 },
+    { id: 2, title: 'Выполнение ДЗ', streak: 8, completedToday: true, goal: 21 },
+    { id: 3, title: 'Работа по алгоритмам', streak: 5, completedToday: false, goal: 14 },
   ]);
 
   const userStats = {
@@ -84,15 +84,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="container mx-auto p-4 md:p-8 max-w-7xl">
         <header className="mb-8 animate-fade-in">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-2">
-                SalesAcademy
+                Level up. PRO новостройки
               </h1>
-              <p className="text-muted-foreground text-lg">Игровая платформа обучения продажам</p>
+              <p className="text-muted-foreground text-lg">Профессиональное обучение продажам недвижимости</p>
             </div>
             <div className="flex items-center gap-4">
               <Badge variant="outline" className="text-lg px-4 py-2 animate-pulse-glow">

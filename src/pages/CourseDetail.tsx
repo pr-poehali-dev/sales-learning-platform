@@ -106,7 +106,7 @@ const CourseDetail = () => {
   const progress = (courseData.completedLessons / courseData.totalLessons) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="container mx-auto p-4 md:p-8 max-w-5xl">
         <Button
           variant="ghost"
