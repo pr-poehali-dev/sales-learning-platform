@@ -84,7 +84,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto p-4 md:p-8 max-w-7xl">
         <header className="mb-8 animate-fade-in">
           <div className="flex items-center justify-between mb-6">
@@ -103,6 +103,14 @@ const Index = () => {
                 <div className="text-3xl font-bold text-primary">Lvl {userStats.level}</div>
                 <div className="text-xs text-muted-foreground">Уровень</div>
               </div>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigate('/profile')}
+                className="hover:bg-accent/10 hover:border-accent"
+              >
+                <Icon name="User" size={20} />
+              </Button>
             </div>
           </div>
 
@@ -143,7 +151,7 @@ const Index = () => {
                 <Card key={course.id} className="hover:shadow-lg transition-all hover:scale-105 border-2 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                   <CardHeader>
                     <div className="flex items-start justify-between">
-                      <div className="bg-gradient-to-br from-primary to-secondary p-3 rounded-xl text-white mb-3">
+                      <div className="bg-accent p-3 rounded-xl text-white mb-3">
                         <Icon name={course.icon as any} size={28} />
                       </div>
                       <Badge variant="secondary" className="font-semibold">
@@ -162,7 +170,7 @@ const Index = () => {
                         <Progress value={course.progress} className="h-2" />
                       </div>
                       <Button 
-                        className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                        className="w-full bg-accent hover:bg-accent/90"
                         onClick={() => navigate(`/course/${course.id}`)}
                       >
                         Продолжить обучение

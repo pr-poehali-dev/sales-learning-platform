@@ -106,7 +106,7 @@ const CourseDetail = () => {
   const progress = (courseData.completedLessons / courseData.totalLessons) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto p-4 md:p-8 max-w-5xl">
         <Button
           variant="ghost"
@@ -121,7 +121,7 @@ const CourseDetail = () => {
           <Card className="border-2 border-primary/20 mb-6">
             <CardHeader>
               <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-br from-primary to-secondary p-4 rounded-2xl text-white">
+                <div className="bg-accent p-4 rounded-2xl text-white">
                   <Icon name={courseData.icon as any} size={40} />
                 </div>
                 <div className="flex-1">
@@ -135,11 +135,11 @@ const CourseDetail = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2">
-                      <Icon name="BookOpen" className="text-primary" size={20} />
+                      <Icon name="BookOpen" className="text-accent" size={20} />
                       <span className="font-semibold">{courseData.totalLessons} уроков</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Icon name="CheckCircle" className="text-success" size={20} />
+                      <Icon name="CheckCircle" className="text-accent" size={20} />
                       <span className="font-semibold">{courseData.completedLessons} завершено</span>
                     </div>
                   </div>
@@ -158,7 +158,7 @@ const CourseDetail = () => {
                 key={lesson.id}
                 className={`transition-all hover:shadow-lg animate-fade-in ${
                   lesson.locked ? 'opacity-60' : 'hover:scale-[1.02] cursor-pointer'
-                } ${lesson.completed ? 'border-success/30 bg-success/5' : 'border-2'}`}
+                } ${lesson.completed ? 'border-accent/30 bg-accent/5' : 'border-2'}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
@@ -166,10 +166,10 @@ const CourseDetail = () => {
                     <div
                       className={`p-3 rounded-xl ${
                         lesson.completed
-                          ? 'bg-success text-white'
+                          ? 'bg-accent text-white'
                           : lesson.locked
                           ? 'bg-muted text-muted-foreground'
-                          : 'bg-gradient-to-br from-primary to-secondary text-white'
+                          : 'bg-accent text-white'
                       }`}
                     >
                       <Icon
@@ -201,7 +201,7 @@ const CourseDetail = () => {
                             className={
                               lesson.completed
                                 ? ''
-                                : 'bg-gradient-to-r from-primary to-secondary hover:opacity-90'
+                                : 'bg-accent hover:bg-accent/90'
                             }
                           >
                             {lesson.completed ? (
@@ -233,7 +233,7 @@ const CourseDetail = () => {
           </div>
 
           {progress === 100 && (
-            <Card className="mt-6 bg-gradient-to-r from-success/10 to-accent/10 border-2 border-success/30 animate-scale-in">
+            <Card className="mt-6 bg-accent/10 border-2 border-accent/30 animate-scale-in">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-4">
                   <div className="text-6xl">🎉</div>
@@ -243,7 +243,7 @@ const CourseDetail = () => {
                       Вы успешно изучили все материалы курса "Личный бренд и продвижение"
                     </p>
                     <div className="flex gap-3">
-                      <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                      <Button className="bg-accent hover:bg-accent/90">
                         <Icon name="Trophy" className="mr-2" size={18} />
                         Получить сертификат
                       </Button>
